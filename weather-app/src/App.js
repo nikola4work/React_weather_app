@@ -25,7 +25,7 @@ class App extends React.Component{
       error:false
 
     }
-    this.getWeather();
+    
 
     this.weathericon = {
       Thunderstorm: "wi-thunderstorm",
@@ -74,8 +74,15 @@ get_Weathericon(icons,rangeID){
   }
 }
 
-  getWeather = async()=>{
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`)
+  getWeather = async(e)=>{
+
+    e.preventDefault();
+
+    const city = e.target.elements.city.value;
+        const country = e.target.elements.country.value;
+
+
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`)
 
 {/**CONVERT DATA TO JSON FILE */}
 const response = await api_call.json();
@@ -93,12 +100,13 @@ this.setState({
 
 this.get_Weathericon(this.weathericon,response.weather[0].id)
 
+
   }
 
   render(){
     return (
       <div className="App">
-        <Form/>
+        <Form loadWeather={this.getWeather}/>
         <Weather
           city={this.state.city}
           country={this.state.country}
