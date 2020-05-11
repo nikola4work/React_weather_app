@@ -5,6 +5,7 @@ import Weather from "./component/weather.component"
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'weather-icons/css/weather-icons.css'
 import { Component } from "react";
+import Form from "../src/component/form.component"
 
 // http://api.openweathermap.org/daa/2.5/weather?q=London,uk
 const API_key = "12be9dca0b918a1415beaa5a35fab8fd";
@@ -89,11 +90,15 @@ this.setState({
   description:response.weather[0].description,
   icon:this.weathericon.Thunderstorm
 });
+
+this.get_Weathericon(this.weathericon,response.weather[0].id)
+
   }
 
   render(){
     return (
       <div className="App">
+        <Form/>
         <Weather
           city={this.state.city}
           country={this.state.country}
