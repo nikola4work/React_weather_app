@@ -92,6 +92,7 @@ class App extends React.Component {
         temp_min: this.calCelsius(response.main.temp_min),
         description: response.weather[0].description,
         icon: this.weathericon.Thunderstorm,
+        error: false,
       });
 
       this.get_Weathericon(this.weathericon, response.weather[0].id);

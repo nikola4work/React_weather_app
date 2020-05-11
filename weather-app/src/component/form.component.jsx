@@ -4,7 +4,7 @@ import "../component/form.style.css";
 const Form = props => {
     return (
       <div className="container">
-          <div>{props.error ? error(): null}</div>
+        <div>{props.error ? error() : null}</div>
         <form onSubmit={props.loadWeather}>
           <div className="row">
             <div className="col-md-3 offset-md-2">
@@ -27,7 +27,7 @@ const Form = props => {
               />
             </div>
             <div className="col-md-3 mt-md-0 text-md-left">
-              <button className="btn btn-warning">Get Weather</button>
+              <button className="btn btn-warning style">Get Weather</button>
             </div>
           </div>
         </form>
