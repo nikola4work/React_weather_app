@@ -6,8 +6,8 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 25vh;
-    margin-left: 50px;
+   
+    
 }
 
 form input[name="city"], form input[name="country"] {
