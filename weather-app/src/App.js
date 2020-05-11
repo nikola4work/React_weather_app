@@ -12,7 +12,10 @@ const API_key = "12be9dca0b918a1415beaa5a35fab8fd";
 class App extends React.Component{
   constructor(){
     super();
-    this.state = {}
+    this.state = {
+      city:undefined,
+      country:undefined
+    }
     this.getWeather();
   }
 
@@ -23,13 +26,16 @@ class App extends React.Component{
 const response = await api_call.json();
 console.log(response)
 
-
+this.setState({
+  city:response.name,
+  country:response.sys.country
+})
   }
 
   render(){
     return(
       <div className="App">
-        <Weather />
+        <Weather city={this.state.city} country={this.state.country} />
       </div>
     )
   }
