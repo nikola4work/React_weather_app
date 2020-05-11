@@ -11,6 +11,6 @@ form input[name="city"], form input[name="country"] {
 }
 
 form input:focus {
-    background-color: transparent;
+    background-color: transparent !important;
     box-shadow: none !important;
 }
