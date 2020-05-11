@@ -114,6 +114,9 @@ class App extends React.Component {
           description={this.state.description}
           weathericon={this.state.icon}
         />
+        <div className="footer">
+          <p>&copy;Nikola Jovanovic 2020</p>
+        </div>
       </div>
     );
   }
