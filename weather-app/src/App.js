@@ -12,14 +12,17 @@ const API_key = "12be9dca0b918a1415beaa5a35fab8fd";
 class App extends React.Component{
   constructor(){
     super();
-    this.satet = {}
+    this.state = {}
+    this.getWeather();
   }
 
   getWeather = async()=>{
-    const api_call = await fetch(`http://api.openweathermap.org/daa/2.5/weather?q=London,uk&appid=${API_key}`)
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${API_key}`)
 
 {/**CONVERT DATA TO JSON FILE */}
 const response = await api_call.json();
+console.log(response)
+
 
   }
 
