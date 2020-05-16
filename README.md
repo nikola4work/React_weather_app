@@ -11,7 +11,9 @@
 This is simple example of 3rd party API and React.js as a front end library. 
 
 
-### Live Preview <a href="https://nikola-weather.netlify.app/"> <a/>
+### Live Preview 
+
+<a href="https://nikola-weather.netlify.app/">Demo<a/>
 
 
 
